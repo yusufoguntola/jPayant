@@ -19,8 +19,18 @@ The PRIVATE KEY is expected for all authentication.
 ### There are five major features in the api, including: Client, Invoice, Miscellaneous, Transfer, Product, Payment
 #### Client
 ```shell
+import features.objects.ClientObject;
+import features.Client;
+
 // Initialize a client object
-Client client = new Client(PRIVATE_KEY, Implementation.DEMO); //Use Implementation.LIVE when you are going live with your app.
+//Change to Implementation.LIVE when you are going live with your app.
+Client client = new Client(PRIVATE_KEY, Implementation.DEMO);
 
 //Create a new client
+
+Client client = new Client(YOUR_PRIVATE_KEY, Implementation.DEMO);
+ClientObject obj = client.addClient(firstName, lastName, email, phone);
+//OR
+ClientObject obj = client.addClient(firstName, lastName, email, phone, settlementBank, accountNumber, website, address, type, companyName);
+//Get type from ClientType e.g ClientType.CUSTOMER
 ```
