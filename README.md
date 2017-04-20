@@ -20,5 +20,7 @@ The PRIVATE KEY is expected for all authentication.
 #### Client
 ```shell
 // Initialize a client object
+Client client = new Client(PRIVATE_KEY, Implementation.DEMO); //Use Implementation.LIVE when you are going live with your app.
 
+//Create a new client
 ```
