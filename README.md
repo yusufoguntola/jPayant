@@ -15,6 +15,7 @@ To use this wrapper in your app, copy the jar files in the lib folder into your 
 To start with, visit <a href="https://payant.ng/get-started">Payant startup page</a> to register and obtain your ```Authorization Keys.```
 You'd get both a `PUBLIC KEY` and a `PRIVATE KEY`.
 The PRIVATE KEY is expected for all authentication.
+> Visit <a href="https://yusufoguntola.github.io/jPayantDoc/">jPayantDoc</a> for the Java documentation
 
 ### There are five major features in the api, including: Client, Invoice, Miscellaneous, Transfer, Product, Payment
 #### Client
