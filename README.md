@@ -207,4 +207,10 @@ The PRIVATE KEY is expected for all authentication.
 
 ```
 
+## Contributing
+To contribute, Fork this repo, make your changes and create a pull request.
+
+## License
+This library is licensed under the MIT License
+
 >Making payment could not be more easier.
