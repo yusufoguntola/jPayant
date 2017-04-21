@@ -8,9 +8,14 @@ import base.exceptions.NoMessageException;
 import features.Client;
 import features.Invoice;
 import features.Miscellaneous;
+import features.Payment;
+import features.Product;
+import features.Transfer;
 import features.objects.ClientObject;
 import features.objects.InvoiceObject;
 import features.objects.PaymentObject;
+import features.objects.ProductObject;
+import features.objects.TransferObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +27,8 @@ import utils.constants.ClientType;
 import utils.constants.FeeBearer;
 import utils.constants.HistoryPeriod;
 import utils.constants.Implementation;
+import utils.constants.PaymentChannel;
+import utils.constants.ProductType;
 
 /**
  *
@@ -135,6 +142,84 @@ public class Usage {
             AccountDetails accountDetails = miscellaneous.resolveAccount("Bank Id", "Account Number");
             String accountName = accountDetails.getAccountName();
             String accountNumber = accountDetails.getAccountNumber();
+        } catch (AuthenticationException | InvalidInputException | IOException | JSONException e) {
+        }
+    }
+
+    private void PaymentExample() {
+        try {
+            //Initialize payment
+            Payment payment = new Payment("YOUR_PRIVATE_KEY", Implementation.DEMO);
+
+            //Add a new payment
+            //Get payment channels from PaymentChannel class.
+            PaymentObject addedPayment = payment.addPayment("Reference Code", "05/12/2018", "20000", PaymentChannel.CASH);
+
+            //Get a previous payment with it's Reference Code
+            PaymentObject payment1 = payment.getPayment("Reference Code");
+
+            //Get payments within a period
+            List<PaymentObject> paymentHistory = payment.getPaymentHistory(HistoryPeriod.TODAY);
+
+            //Or within a specified custom date
+            List<PaymentObject> paymentHistory1 = payment.getPaymentHistory("05/12/2016", "05/12/2018");
+
+            //Get payment details from PaymentObject. e.g:
+            String amount = addedPayment.getAmount();
+            ClientObject client = addedPayment.getClient();
+        } catch (AuthenticationException | InvalidInputException | IOException | JSONException e) {
+        }
+    }
+
+    private void ProductExample() {
+        try {
+            //Initialize product
+            Product product = new Product("YOUR_PRIVATE_KEY", Implementation.DEMO);
+
+            //Add a new product
+            //Get ProductType from ProductType class
+            ProductObject addedProduct = product.addProduct("Name", "Description", "20000", ProductType.PRODUCT);
+
+            //Get a previously added product
+            ProductObject product1 = product.getProduct("Product Id");
+
+            //Get all products
+            List<ProductObject> products = product.getProducts();
+
+            //Delete a product
+            ResponseParser deleteProduct = product.deleteProduct("Product Id");
+
+            //Get product information from ProductObject. e.g:
+            String description = addedProduct.getDescription();
+        } catch (AuthenticationException | InvalidInputException | IOException | JSONException e) {
+        }
+    }
+
+    private void TransferExample() {
+        try {
+            //Initialize transfer
+            Transfer transfer = new Transfer("YOUR_PRIVATE_KEY", Implementation.DEMO);
+
+            //Make a transfer from your account to another account.
+            TransferObject addedTransfer = transfer.addTransfer("First Name", "Last Name", "Email", "Phone", "Bank code", "Account Number", "Amount");
+
+            //Delete a transfer
+            ResponseParser deletedTransfer = transfer.deleteTransfer("Reference code");
+
+            //Get a transfer
+            TransferObject transfer1 = transfer.getTransfer("Reference Code");
+
+            //Get transfers made within a period range making use of HistoryPeriod to obtain available periods.
+            List<TransferObject> transferHistory = transfer.getTransferHistory(HistoryPeriod.ONE_WEEK);
+
+            //Or get transfer history within a date range
+            List<TransferObject> transferHistory1 = transfer.getTransferHistory("05/12/2016", "05/12/2018");
+
+            //Get details of transfer using the TransferObject e.g:
+            String accountNumber = addedTransfer.getAccountNumber();
+            ClientObject client = addedTransfer.getClient();
+            String clientId = addedTransfer.getClientId();
+            String accountName = addedTransfer.getAccountName();
         } catch (AuthenticationException | InvalidInputException | IOException | JSONException e) {
         }
     }
