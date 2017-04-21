@@ -6,6 +6,6 @@ package utils.constants;
  */
 public class FeeBearer {
 
-    public static String ACCOUNT = "account";
-    public static String CLIENT = "client";
+    public static final String ACCOUNT = "account";
+    public static final String CLIENT = "client";
 }

@@ -6,10 +6,10 @@ package utils.constants;
  */
 public class FeatureTypes {
 
-    public static String CLIENT = "Client";
-    public static String INVOICE = "Invoice";
-    public static String MISCELLANEOUS = "Miscellaneous";
-    public static String PAYMENT = "Payment";
-    public static String PRODUCTS = "Products";
-    public static String TRANSFER = "Transfer";
+    public static final String CLIENT = "Client";
+    public static final String INVOICE = "Invoice";
+    public static final String MISCELLANEOUS = "Miscellaneous";
+    public static final String PAYMENT = "Payment";
+    public static final String PRODUCTS = "Products";
+    public static final String TRANSFER = "Transfer";
 }

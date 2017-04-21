@@ -6,6 +6,6 @@ package utils.constants;
  */
 public class ProductType {
 
-    public static String PRODUCT = "product";
-    public static String SERVICE = "service";
+    public static final String PRODUCT = "product";
+    public static final String SERVICE = "service";
 }

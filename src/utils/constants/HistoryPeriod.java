@@ -6,10 +6,10 @@ package utils.constants;
  */
 public class HistoryPeriod {
 
-    public static String TODAY = "today";
-    public static String ONE_WEEK = "week";
-    public static String ONE_MONTH = "month";
-    public static String LAST_THIRTY_DAYS = "30";
-    public static String LAST_NINETY_DAYS = "90";
-    public static String ONE_YEAR = "year";
+    public static final String TODAY = "today";
+    public static final String ONE_WEEK = "week";
+    public static final String ONE_MONTH = "month";
+    public static final String LAST_THIRTY_DAYS = "30";
+    public static final String LAST_NINETY_DAYS = "90";
+    public static final String ONE_YEAR = "year";
 }

@@ -6,6 +6,6 @@ package utils.constants;
  */
 public class Implementation {
 
-    public static String DEMO = "Demo";
-    public static String LIVE = "Live";
+    public static final String DEMO = "Demo";
+    public static final String LIVE = "Live";
 }

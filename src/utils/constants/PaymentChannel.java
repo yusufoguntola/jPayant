@@ -6,8 +6,8 @@ package utils.constants;
  */
 public class PaymentChannel {
 
-    public static String CASH = "Cash";
-    public static String BANK_TRANSFER = "BankTransfer";
-    public static String POS = "POS";
-    public static String CHEQUE = "Cheque";
+    public static final String CASH = "Cash";
+    public static final String BANK_TRANSFER = "BankTransfer";
+    public static final String POS = "POS";
+    public static final String CHEQUE = "Cheque";
 }

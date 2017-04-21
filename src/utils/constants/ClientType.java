@@ -6,7 +6,7 @@ package utils.constants;
  */
 public class ClientType {
 
-    public static String CUSTOMER = "Customer";
-    public static String STAFF = "Staff";
-    public static String VENDOR = "Vendor";
+    public static final String CUSTOMER = "Customer";
+    public static final String STAFF = "Staff";
+    public static final String VENDOR = "Vendor";
 }
