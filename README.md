@@ -1,5 +1,5 @@
 # jPayant
-> Java wrapper for <a href="https://payant.ng/">Payant</a> payment
+> Java wrapper for <a href="https://payant.ng/ref/Itqxfoej">Payant</a> payment
 
 ## Background
 Payant makes receiving money on your website or from your app very easy.<br>
@@ -12,7 +12,7 @@ To use this wrapper in your app, copy the jar files in the lib folder into your 
 > Luckily, this wrapper is well documented.
 
 ## Usage.
-To start with, visit <a href="https://payant.ng/get-started">Payant startup page</a> to register and obtain your ```Authorization Keys.```
+To start with, visit <a href="https://payant.ng/ref/Itqxfoej">Payant startup page</a> to register and obtain your ```Authorization Keys.```
 You'd get both a `PUBLIC KEY` and a `PRIVATE KEY`.
 The PRIVATE KEY is expected for all authentication.
 > Visit <a href="https://yusufoguntola.github.io/jPayantDoc/">jPayantDoc</a> for the Java documentation
