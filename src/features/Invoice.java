@@ -6,15 +6,14 @@ import base.ResponseParser;
 import base.exceptions.AuthenticationException;
 import base.exceptions.InvalidInputException;
 import base.exceptions.NoDataException;
+import features.objects.ClientObject;
+import features.objects.InvoiceObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import features.objects.ClientObject;
-import utils.constants.FeatureTypes;
-import features.objects.InvoiceObject;
 import utils.Item;
 import utils.JSONParser;
 
@@ -47,14 +46,14 @@ public class Invoice extends Base {
      * @param clientObject
      * @param dueDate
      * @param feeBearer
-     * @param item
+     * @param items
      * @return
      * @throws org.json.JSONException
      * @throws base.exceptions.InvalidInputException
      * @throws java.io.IOException
      */
-    public InvoiceObject addInvoice(ClientObject clientObject, String dueDate, String feeBearer, Item item) throws JSONException, InvalidInputException, IOException {
-        String requestData = new JSONParser(FeatureTypes.INVOICE, clientObject.getClientId(), dueDate, feeBearer, item.getJSONString()).getJSONString();
+    public InvoiceObject addInvoice(ClientObject clientObject, String dueDate, String feeBearer, List<Item> items) throws JSONException, InvalidInputException, IOException {
+        String requestData = JSONParser.invoiceParser(clientObject.getClientId(), dueDate, feeBearer, Item.getItemArray(items)).toString();
         return new InvoiceObject(new RequestManager(getUrl("invoices"), getAuthKey()).doPost(requestData));
     }
 

@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.List;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -63,7 +65,16 @@ public class Item {
         object.put("unit_cost", getUnitCost());
         object.put("quantity", getQuantity());
         String string = object.toString();
-        return "[" + string + "]";
+        return string;
+    }
+
+    public JSONObject getJSONObject() throws JSONException {
+        JSONObject object = new JSONObject();
+        object.put("item", getItemName());
+        object.put("description", getDescription());
+        object.put("unit_cost", getUnitCost());
+        object.put("quantity", getQuantity());
+        return object;
     }
 
     public String getItemName() {
@@ -96,6 +107,17 @@ public class Item {
 
     public void setQuantity(String quantity) {
         this.quantity = quantity;
+    }
+
+    public static JSONArray getItemArray(List<Item> items) {
+        JSONArray array = new JSONArray();
+        items.forEach(item -> {
+            try {
+                array.put(item.getJSONObject());
+            } catch (JSONException ex) {
+            }
+        });
+        return array;
     }
 
 }

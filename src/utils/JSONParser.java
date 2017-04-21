@@ -45,6 +45,15 @@ public class JSONParser {
         }
     }
 
+    public static JSONObject invoiceParser(String clientId, String dueDate, String feeBearer, JSONArray items) throws JSONException {
+        JSONObject object = new JSONObject();
+        object.put("client_id", clientId);
+        object.put("due_date", dueDate);
+        object.put("fee_bearer", feeBearer);
+        object.put("items", items);
+        return object;
+    }
+
     public String getJSONString() {
         return object.toString();
     }
