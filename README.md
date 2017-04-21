@@ -25,8 +25,10 @@ The PRIVATE KEY is expected for all authentication.
 
       //Add a new Client using very few information
       ClientObject newClient = client.addClient("First Name", "Last Name", "Email", "Phone");
+
       //OR add all the details using an empty string for information that's not available
       newClient = client.addClient("First Name", "Last Name", "Email", "Phone", "Bank Id", "Account Number", "Website", "Address", ClientType.CUSTOMER, "Company Name");
+
       //Use the ClientObject object to get details of the newly registered client.
       String clientId = newClient.getClientId();
       String accountNumber = newClient.getAccountNumber();
