@@ -177,6 +177,8 @@ The PRIVATE KEY is expected for all authentication.
 
 ```
 
+#### Transfer
+
 ```java
 
     //Initialize transfer
